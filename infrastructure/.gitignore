@@ -1,3 +1,5 @@
 .terraform*
 aws-key*
 terraform.*
+tf.plan
+tfplan.txt

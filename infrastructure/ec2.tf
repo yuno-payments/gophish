@@ -1,25 +1,21 @@
-resource "aws_instance" "gophish" {
+resource "aws_instance" "secops_phishing_tool" {
     ami = "${lookup(var.AMI, var.AWS_REGION)}"
     instance_type = "t2.micro"
 
     # VPC
-    subnet_id = "${aws_subnet.prod-subnet-public-1.id}"
+    subnet_id = var.public_subnet_a
 
     # Security Group
-    vpc_security_group_ids = ["${aws_security_group.gophish_sg.id}"]
-
-    # the Public SSH key
-    key_name = "${aws_key_pair.local-key.id}"
+    vpc_security_group_ids = ["${aws_security_group.secops_phishing_tool_sg.id}"]
 
     user_data = file("${path.module}/install.sh")
 
-    tags = {
-        Name = "gophish"
-    }
-}
+    # IAM
+    iam_instance_profile = aws_iam_instance_profile.ssm_profile_secops_phishing_tool.name
 
-// Sends your public key to the instance
-resource "aws_key_pair" "local-key" {
-  key_name   = "local-key"
-  public_key = file("${path.module}/aws-key-creds.pub")
+    tags = {
+        Name = "phishing_tool"
+        Project = "secops_phishing_tool"
+        Area = "secops"
+    }
 }
