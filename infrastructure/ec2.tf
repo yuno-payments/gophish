@@ -3,7 +3,7 @@ resource "aws_instance" "secops_phishing_tool" {
     instance_type = "t2.micro"
 
     # VPC
-    subnet_id = var.public_subnet_a
+    subnet_id = var.private_subnet
 
     # Security Group
     vpc_security_group_ids = ["${aws_security_group.secops_phishing_tool_sg.id}"]

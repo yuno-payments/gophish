@@ -11,17 +11,24 @@ variable "AMI" {
 }
 
 variable "VPC" {
-  default = "vpc-03a8837850ab75d20"
+  default = "vpc-07ef115280de57552"
 }
 
 variable "public_subnet_a" {
-  default = "subnet-0f42cc5cceb22f324"
+  default = "subnet-0a53f96d5d4a4b746"
 }
 
 variable "public_subnet_b" {
-  default = "subnet-0bf8e5100b3b43007"
+  default = "subnet-07b102c36976198b4"
 }
 
+variable "public_subnet_c" {
+  default = "subnet-0e6660009d01e7baf"
+}
+
+variable "private_subnet" {
+  default = "subnet-0995aa899c2300010"
+}
 
 variable "cert_arn" {
   type    = string

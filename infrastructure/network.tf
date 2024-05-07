@@ -12,7 +12,7 @@ resource "aws_security_group" "secops_phishing_tool_sg" {
         from_port = 3333
         to_port = 3333
         protocol = "tcp"
-        cidr_blocks = ["0.0.0.0/0"]
+        cidr_blocks = ["10.30.0.0/16"] # only allow VPN access
     }
 
     ingress {

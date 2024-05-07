@@ -3,7 +3,7 @@ resource "aws_lb" "secops_phishing_tool_lb" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.secops_phishing_tool_sg.id]
-  subnets = [var.public_subnet_a, var.public_subnet_b]
+  subnets = [var.public_subnet_a, var.public_subnet_b, var.public_subnet_c]
 
   tags = {
     Name = "gophish"
