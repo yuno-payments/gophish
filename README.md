@@ -1,9 +1,18 @@
 # Secops Phishing Tool - Gophish - Terraform repository
 
-## Build infrastructure
+## Build infrastructure - Legacy
 ```
 terraform plan
 terraform apply
+```
+
+## Build infrastructure - Tofu useful commands
+```
+tofu init
+tofu workspace list
+tofu workspace select devops
+tofu state list
+tofu apply
 ```
 
 ## Get initial credentials
