@@ -29,3 +29,9 @@ gophish_admin.key
 *.exe
 gophish.db*
 gophish
+.terraform
+.terraform*
+aws-key*
+terraform.*
+tf.plan
+tfplan.txt
